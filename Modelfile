@@ -1,0 +1,16 @@
+FROM ./qwen2.5-3b-instruct.Q8_0.gguf
+
+PARAMETER temperature 0.2
+PARAMETER top_p 0.95
+PARAMETER repeat_penalty 1.05
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|im_start|>"
+
+SYSTEM """You are Qwen, an expert programming assistant. Provide clear, bug-free, and well-structured code solutions."""
+
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+{{ .Response }}<|im_end|>"""

@@ -1,0 +1,18 @@
+# Model weights & binaries
+*.gguf
+*.bin
+*.safetensors
+*.pt
+
+# Local data & outputs
+data/
+checkpoints/
+models/
+*.jsonl
+
+# Python cache & virtualenvs
+__pycache__/
+*.py[cod]
+.venv/
+env/
+.ipynb_checkpoints/
